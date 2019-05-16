@@ -27,7 +27,12 @@ const IndexPage = ({ data, graphql }) => {
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    {JSON.stringify(data)}
+    { (data.demo.getTasks) ? data.demo.getTasks.map((task) => (
+      <div style={{ marginBottom: '15px' }}>
+        <h3>{task.title}</h3>
+        <span>{task.description}</span>
+      </div>
+    )) : null }
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>);
 }
