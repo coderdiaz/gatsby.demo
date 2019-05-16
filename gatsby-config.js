@@ -5,6 +5,17 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: "gatsby-source-graphql-universal",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "Demo",
+        // This is field under which it's accessible
+        fieldName: "demo",
+        // Url to query from
+        url: "http://localhost:5000/graphql",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
